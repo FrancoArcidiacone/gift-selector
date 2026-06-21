@@ -17,13 +17,13 @@ const resetButton = document.querySelector("[data-reset]");
 const passwordForm = document.querySelector("#password-form");
 const passwordInput = document.querySelector("#password-input");
 const passwordFeedback = document.querySelector("#password-feedback");
+const continueButton = document.querySelector("[data-continue-final]");
 const cards = Array.from(document.querySelectorAll(".gift-card"));
 const progressBar = document.querySelector("#progress-bar");
 const analysisSteps = Array.from(document.querySelectorAll("#analysis-steps li"));
 const finalChoice = document.querySelector("#final-choice");
 
 let analysisTimer = null;
-let dispatchTimer = null;
 
 function showScreen(name) {
   Object.values(screens).forEach((screen) => screen.classList.remove("is-active"));
@@ -33,7 +33,6 @@ function showScreen(name) {
 
 function resetAnalysis() {
   window.clearTimeout(analysisTimer);
-  window.clearTimeout(dispatchTimer);
   progressBar.style.width = "0%";
   analysisSteps.forEach((step) => {
     step.classList.remove("is-active", "is-done");
@@ -60,7 +59,6 @@ function runAnalysis(choice) {
   analysisTimer = window.setTimeout(() => {
     finalChoice.textContent = `Misión seleccionada: ${gifts[choice]}`;
     showScreen("dispatch");
-    dispatchTimer = window.setTimeout(() => showScreen("final"), 4200);
   }, duration + 250);
 }
 
@@ -94,6 +92,8 @@ resetButton.addEventListener("click", () => {
   resetAnalysis();
   showScreen("intro");
 });
+
+continueButton.addEventListener("click", () => showScreen("final"));
 
 cards.forEach((card) => {
   const choice = card.dataset.gift;
