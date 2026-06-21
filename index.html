@@ -41,7 +41,7 @@
             <div class="message">
               <p>Dos opciones fueron preseleccionadas.</p>
               <p>La decisión final queda en manos del agente principal.</p>
-              <p>Aclaración oficial: esto no significa que estés eligiendo tu propio regalo. Técnicamente es una misión.</p>
+              <p>Aclaración oficial: te lo juramos eh! No estás eligiendo tu regalo... ¿o sí? 😂</p>
             </div>
             <button class="primary-action" type="button" data-start>
               <span>Ingresar a la misión</span>
@@ -151,34 +151,44 @@
         </div>
       </section>
 
+      <section class="screen dispatch-screen" id="dispatch-screen" aria-labelledby="dispatch-title" aria-live="polite">
+        <div class="dispatch-box">
+          <p class="mono">Canal familiar desbloqueado</p>
+          <h2 id="dispatch-title">Bueno, al final sí estabas eligiendo!</h2>
+          <p>La información está siendo enviada a la agente Puchini.</p>
+          <p>En breve recibirás novedades.</p>
+          <div class="transmission" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
       <section class="screen final-screen" id="final-screen" aria-labelledby="final-title">
         <div class="final-box">
           <p class="mono">Misión completada</p>
           <p class="final-choice" id="final-choice"></p>
-          <h2 id="final-title">Feliz día pa, te amamos!</h2>
-          <div class="heart-row" aria-hidden="true">
-            <span>❤</span>
-            <span>❤</span>
-            <span>❤</span>
-          </div>
+          <h2 id="final-title">Feliz día pa!</h2>
+          <p class="final-love">Te amamos mucho <span aria-hidden="true">♥️</span></p>
           <div class="memory-grid" aria-label="Fotos familiares">
             <figure class="memory-card">
               <img src="assets/photos/final-1.jpg" alt="Foto con Luis en el teatro">
             </figure>
             <figure class="memory-card">
-              <img src="assets/photos/final-2.jpg" alt="Foto familiar con Luis">
+              <img src="assets/photos/final-5.jpg" alt="Foto con Luis y mascota">
             </figure>
             <figure class="memory-card">
               <img src="assets/photos/final-3.jpg" alt="Foto familiar con camiseta argentina">
             </figure>
             <figure class="memory-card">
-              <img src="assets/photos/final-4.jpg" alt="Foto familiar en una salida">
-            </figure>
-            <figure class="memory-card">
-              <img src="assets/photos/final-5.jpg" alt="Foto con Luis y mascota">
-            </figure>
-            <figure class="memory-card">
               <img src="assets/photos/final-6.jpg" alt="Abrazo con Luis">
+            </figure>
+            <figure class="memory-card">
+              <img src="assets/photos/final-2.jpg" alt="Foto familiar con Luis">
+            </figure>
+            <figure class="memory-card">
+              <img src="assets/photos/final-4.jpg" alt="Foto familiar en una salida">
             </figure>
           </div>
           <button class="secondary-action" type="button" data-reset>Volver a revisar</button>

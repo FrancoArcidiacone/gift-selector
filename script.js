@@ -3,6 +3,7 @@ const screens = {
   password: document.querySelector("#password-screen"),
   selection: document.querySelector("#selection-screen"),
   analysis: document.querySelector("#analysis-screen"),
+  dispatch: document.querySelector("#dispatch-screen"),
   final: document.querySelector("#final-screen"),
 };
 
@@ -22,6 +23,7 @@ const analysisSteps = Array.from(document.querySelectorAll("#analysis-steps li")
 const finalChoice = document.querySelector("#final-choice");
 
 let analysisTimer = null;
+let dispatchTimer = null;
 
 function showScreen(name) {
   Object.values(screens).forEach((screen) => screen.classList.remove("is-active"));
@@ -31,6 +33,7 @@ function showScreen(name) {
 
 function resetAnalysis() {
   window.clearTimeout(analysisTimer);
+  window.clearTimeout(dispatchTimer);
   progressBar.style.width = "0%";
   analysisSteps.forEach((step) => {
     step.classList.remove("is-active", "is-done");
@@ -56,7 +59,8 @@ function runAnalysis(choice) {
 
   analysisTimer = window.setTimeout(() => {
     finalChoice.textContent = `Misión seleccionada: ${gifts[choice]}`;
-    showScreen("final");
+    showScreen("dispatch");
+    dispatchTimer = window.setTimeout(() => showScreen("final"), 4200);
   }, duration + 250);
 }
 
