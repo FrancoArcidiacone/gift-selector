@@ -908,6 +908,22 @@ dd {
     grid-template-columns: 1fr;
   }
 
+  .dispatch-copy {
+    order: 1;
+  }
+
+  .dispatch-portrait {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-self: center;
+  }
+
+  .dispatch-portrait img {
+    max-width: 100%;
+  }
+
   h1 {
     max-width: 100%;
     font-size: 2.45rem;
