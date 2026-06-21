@@ -234,6 +234,14 @@ h3 {
   overflow-wrap: anywhere;
 }
 
+.mission-note {
+  max-width: 680px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .primary-action,
 .secondary-action,
 .choose-button {
@@ -330,6 +338,74 @@ a:focus-visible {
 
 .terminal-lines p {
   margin: 0;
+}
+
+.password-box {
+  width: min(760px, calc(100vw - 36px));
+  display: grid;
+  gap: 18px;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid rgba(54, 255, 139, 0.34);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(54, 255, 139, 0.1), transparent),
+    var(--panel-strong);
+  box-shadow: var(--shadow), inset 0 0 80px rgba(54, 255, 139, 0.06);
+}
+
+.password-copy {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.password-form {
+  display: grid;
+  gap: 12px;
+}
+
+.password-form label {
+  color: var(--green);
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.password-form input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.28);
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 1rem;
+  outline: none;
+}
+
+.password-form input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(54, 255, 139, 0.14);
+}
+
+.password-feedback {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--gold);
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--fast), transform var(--fast);
+}
+
+.password-feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .blink {
@@ -443,8 +519,10 @@ dd {
   line-height: 1.5;
 }
 
-.card-copy a {
+.plateanet-link {
+  justify-self: center;
   width: max-content;
+  margin: 8px 0 16px;
   color: var(--text);
   font-weight: 800;
   text-decoration-color: rgba(54, 255, 139, 0.65);
@@ -453,7 +531,7 @@ dd {
 
 .choose-button {
   min-height: 50px;
-  margin: 0 clamp(18px, 3vw, 28px) clamp(18px, 3vw, 28px);
+  margin: 12px clamp(18px, 3vw, 28px) clamp(18px, 3vw, 28px);
   border-radius: var(--radius);
   font-weight: 900;
 }
@@ -574,8 +652,11 @@ dd {
     rgba(2, 8, 5, 0.58);
 }
 
+.pending-slot {
+  aspect-ratio: 4 / 5;
+}
+
 .family-slot {
-  aspect-ratio: 8 / 5;
   grid-column: span 2;
 }
 
@@ -665,6 +746,7 @@ dd {
   }
 
   .status-panel,
+  .password-box,
   .analysis-box,
   .final-box {
     padding: 18px;

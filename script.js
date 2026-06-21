@@ -1,5 +1,6 @@
 const screens = {
   intro: document.querySelector("#intro-screen"),
+  password: document.querySelector("#password-screen"),
   selection: document.querySelector("#selection-screen"),
   analysis: document.querySelector("#analysis-screen"),
   final: document.querySelector("#final-screen"),
@@ -12,6 +13,9 @@ const gifts = {
 
 const startButton = document.querySelector("[data-start]");
 const resetButton = document.querySelector("[data-reset]");
+const passwordForm = document.querySelector("#password-form");
+const passwordInput = document.querySelector("#password-input");
+const passwordFeedback = document.querySelector("#password-feedback");
 const cards = Array.from(document.querySelectorAll(".gift-card"));
 const progressBar = document.querySelector("#progress-bar");
 const analysisSteps = Array.from(document.querySelectorAll("#analysis-steps li"));
@@ -66,11 +70,25 @@ function chooseGift(choice) {
   window.setTimeout(() => runAnalysis(choice), 850);
 }
 
-startButton.addEventListener("click", () => showScreen("selection"));
+startButton.addEventListener("click", () => {
+  showScreen("password");
+  passwordInput?.focus?.({ preventScroll: true });
+});
+
+passwordForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  passwordFeedback.textContent = "Tranqui, no te vamos a hacer pensar hoy!";
+  passwordFeedback.classList.add("is-visible");
+  window.setTimeout(() => showScreen("selection"), 1300);
+});
+
 resetButton.addEventListener("click", () => {
   cards.forEach((card) => card.classList.remove("is-selected", "is-dismissed"));
+  passwordFeedback.classList.remove("is-visible");
+  passwordFeedback.textContent = "";
+  passwordInput.value = "";
   resetAnalysis();
-  showScreen("selection");
+  showScreen("intro");
 });
 
 cards.forEach((card) => {

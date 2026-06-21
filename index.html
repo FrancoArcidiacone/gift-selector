@@ -36,11 +36,12 @@
             <div class="status-panel" aria-label="Estado de la misión">
               <p><span>Operador:</span> Luis</p>
               <p><span>Objetivo:</span> elegir una salida al teatro</p>
-              <p><span>Estado:</span> decisión pendiente</p>
+              <p><span>Estado:</span> regalo del día del padre definitivamente no declarado</p>
             </div>
             <div class="message">
               <p>Dos opciones fueron preseleccionadas.</p>
               <p>La decisión final queda en manos del agente principal.</p>
+              <p>Aclaración oficial: esto no significa que estés eligiendo tu propio regalo. Técnicamente es una misión.</p>
             </div>
             <button class="primary-action" type="button" data-start>
               <span>Ingresar a la misión</span>
@@ -66,11 +67,26 @@
         </div>
       </section>
 
+      <section class="screen password-screen" id="password-screen" aria-labelledby="password-title">
+        <div class="password-box">
+          <p class="mono">Verificación de seguridad</p>
+          <h2 id="password-title">Ingresá la contraseña, Luis.</h2>
+          <p class="password-copy">Puede ser cualquier cosa. El sistema está sensible por el Día del Padre.</p>
+          <form class="password-form" id="password-form">
+            <label for="password-input">Contraseña ultra secreta</label>
+            <input id="password-input" type="text" autocomplete="off" placeholder="Escribí lo que quieras">
+            <button class="primary-action" type="submit">Desbloquear misión</button>
+          </form>
+          <p class="password-feedback" id="password-feedback" aria-live="polite"></p>
+        </div>
+      </section>
+
       <section class="screen selection-screen" id="selection-screen" aria-labelledby="selection-title">
         <div class="shell">
           <div class="section-header">
             <p class="mono">Selección de destino</p>
             <h2 id="selection-title">Elegí una obra para completar la misión.</h2>
+            <p class="mission-note">Recordatorio legal: si esto parece tu regalo, es pura coincidencia operacional.</p>
           </div>
 
           <div class="gift-grid" aria-live="polite">
@@ -90,7 +106,7 @@
                     <dd>Sinopsis basada en Teatro Apolo y Plateanet.</dd>
                   </div>
                 </dl>
-                <a href="https://www.plateanet.com/obra/34072?obra=BERLIN-BERLIN&paso=inicio" target="_blank" rel="noreferrer">Ver en Plateanet</a>
+                <a class="plateanet-link" href="https://www.plateanet.com/obra/34072?obra=BERLIN-BERLIN&paso=inicio" target="_blank" rel="noreferrer">Ver en Plateanet</a>
               </div>
               <button class="choose-button" type="button">Seleccionar Berlin Berlin</button>
             </article>
@@ -111,7 +127,7 @@
                     <dd>Sinopsis basada en MG Difusión y Plateanet.</dd>
                   </div>
                 </dl>
-                <a href="https://www.plateanet.com/obra/33879?obra=LA-CENA-DE-LOS-TONTOS-_&paso=inicio" target="_blank" rel="noreferrer">Ver en Plateanet</a>
+                <a class="plateanet-link" href="https://www.plateanet.com/obra/33879?obra=LA-CENA-DE-LOS-TONTOS-_&paso=inicio" target="_blank" rel="noreferrer">Ver en Plateanet</a>
               </div>
               <button class="choose-button" type="button">Seleccionar La Cena de los Tontos</button>
             </article>
@@ -128,7 +144,7 @@
           </div>
           <ol class="analysis-steps" id="analysis-steps">
             <li>Validando selección...</li>
-            <li>Confirmando buen gusto...</li>
+            <li>Confirmando que esto no es un regalo autoelegido...</li>
             <li>Archivando regalo...</li>
             <li>Desbloqueando mensaje final...</li>
           </ol>
@@ -147,25 +163,22 @@
           </div>
           <div class="memory-grid" aria-label="Fotos familiares">
             <figure class="memory-card">
-              <img src="assets/photos/pa-1.jpg" alt="Abrazo con Luis">
+              <img src="assets/photos/final-1.jpg" alt="Foto con Luis en el teatro">
             </figure>
             <figure class="memory-card">
-              <img src="assets/photos/pa-2.jpg" alt="Foto familiar con Luis">
+              <img src="assets/photos/final-2.jpg" alt="Foto familiar con Luis">
             </figure>
             <figure class="memory-card">
-              <img src="assets/photos/pa-3.jpg" alt="Salida con Luis">
+              <img src="assets/photos/final-3.jpg" alt="Foto familiar con camiseta argentina">
             </figure>
-            <figure class="memory-card is-empty">
-              <span>Foto con mi hermana</span>
+            <figure class="memory-card">
+              <img src="assets/photos/final-4.jpg" alt="Foto familiar en una salida">
             </figure>
-            <figure class="memory-card is-empty">
-              <span>Foto con mi hermana</span>
+            <figure class="memory-card">
+              <img src="assets/photos/final-5.jpg" alt="Foto con Luis y mascota">
             </figure>
-            <figure class="memory-card is-empty">
-              <span>Foto con mi hermana</span>
-            </figure>
-            <figure class="memory-card is-empty family-slot">
-              <span>Toda la familia</span>
+            <figure class="memory-card is-empty pending-slot">
+              <span>Foto pendiente</span>
             </figure>
           </div>
           <button class="secondary-action" type="button" data-reset>Volver a revisar</button>
