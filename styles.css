@@ -366,6 +366,47 @@ a:focus-visible {
   margin: 0;
 }
 
+.terminal-creator {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  margin: 0 28px 28px;
+  padding: 14px;
+  border: 1px solid rgba(54, 255, 139, 0.22);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.terminal-creator img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: saturate(0.98) contrast(1.02) brightness(0.95);
+}
+
+.terminal-creator-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.terminal-creator-copy .mono {
+  margin: 0;
+  color: var(--green);
+  font-size: 0.74rem;
+}
+
+.terminal-creator-copy p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
 .password-box {
   width: min(760px, calc(100vw - 36px));
   display: grid;
@@ -880,6 +921,10 @@ dd {
   .terminal-object {
     min-width: 0;
     min-height: 280px;
+  }
+
+  .terminal-creator {
+    margin: 0 18px 18px;
   }
 
   .gift-card {
