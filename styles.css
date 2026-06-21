@@ -79,12 +79,14 @@ button {
 .matrix-column {
   position: absolute;
   top: -15vh;
-  color: rgba(54, 255, 139, 0.15);
+  color: rgba(54, 255, 139, 0.18);
   font-family: "IBM Plex Mono", Consolas, monospace;
   font-size: 1rem;
   letter-spacing: 0.16em;
   writing-mode: vertical-rl;
   animation: rain 13s linear infinite;
+  text-shadow: 0 0 10px rgba(54, 255, 139, 0.42);
+  user-select: none;
 }
 
 .column-one {
@@ -100,6 +102,30 @@ button {
 .column-three {
   right: 8%;
   animation-delay: -9s;
+}
+
+.column-four {
+  left: 28%;
+  font-size: 0.82rem;
+  opacity: 0.72;
+  animation-delay: -2s;
+  animation-duration: 18s;
+}
+
+.column-five {
+  left: 48%;
+  font-size: 1.15rem;
+  opacity: 0.58;
+  animation-delay: -11s;
+  animation-duration: 15s;
+}
+
+.column-six {
+  right: 27%;
+  font-size: 0.9rem;
+  opacity: 0.68;
+  animation-delay: -7s;
+  animation-duration: 20s;
 }
 
 .scanline {
@@ -393,17 +419,27 @@ a:focus-visible {
 }
 
 .password-feedback {
-  min-height: 1.5em;
+  min-height: 0;
   margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
   color: var(--gold);
+  background: transparent;
   font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: clamp(1rem, 2vw, 1.18rem);
   font-weight: 700;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity var(--fast), transform var(--fast);
+  transition: opacity var(--fast), transform var(--fast), padding var(--fast), border-color var(--fast), background var(--fast);
 }
 
 .password-feedback.is-visible {
+  min-height: 1.5em;
+  padding: 14px 16px;
+  border-color: rgba(213, 173, 99, 0.42);
+  background: rgba(213, 173, 99, 0.12);
+  box-shadow: 0 0 24px rgba(213, 173, 99, 0.14), inset 0 0 24px rgba(213, 173, 99, 0.06);
   opacity: 1;
   transform: translateY(0);
 }

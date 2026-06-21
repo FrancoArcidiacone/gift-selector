@@ -79,9 +79,9 @@ startButton.addEventListener("click", () => {
 
 passwordForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  passwordFeedback.textContent = "Tranqui, no te vamos a hacer pensar hoy!";
+  passwordFeedback.textContent = "Tranqui! No te vamos a poner a pensar hoy! 😅";
   passwordFeedback.classList.add("is-visible");
-  window.setTimeout(() => showScreen("selection"), 1300);
+  window.setTimeout(() => showScreen("selection"), 3000);
 });
 
 resetButton.addEventListener("click", () => {
