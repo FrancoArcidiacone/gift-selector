@@ -3,63 +3,64 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Sistema clasificado para seleccionar un regalo de teatro del Día del Padre.">
-    <title>Sistema Oficial de Selección de Regalos</title>
+    <meta name="description" content="Misión clasificada para seleccionar un regalo de teatro del Día del Padre.">
+    <title>Misión de Regalo para Luis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,750&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main class="app" id="app">
       <div class="ambient" aria-hidden="true">
-        <span class="spotlight spotlight-one"></span>
-        <span class="spotlight spotlight-two"></span>
+        <span class="matrix-column column-one">010011010100100101010011010010010100111101001110</span>
+        <span class="matrix-column column-two">LUIS // FD-2026 // TEATRO // OK</span>
+        <span class="matrix-column column-three">101101001011010010110100101101</span>
         <span class="scanline"></span>
       </div>
 
       <section class="screen intro-screen is-active" id="intro-screen" aria-labelledby="intro-title">
-        <div class="shell">
-          <div class="system-topline">
-            <span class="signal-dot" aria-hidden="true"></span>
-            <span>Canal reservado</span>
-            <span>Expediente FD-2026</span>
+        <div class="shell intro-grid">
+          <div class="hero-copy">
+            <div class="system-topline">
+              <span class="signal-dot" aria-hidden="true"></span>
+              <span>Canal reservado</span>
+              <span>Expediente FD-2026</span>
+            </div>
+            <p class="mono version">Terminal familiar / acceso concedido</p>
+            <h1 id="intro-title">
+              <span>Luis, tenés</span>
+              <span>una misión</span>
+              <span>muy importante</span>
+            </h1>
+            <div class="status-panel" aria-label="Estado de la misión">
+              <p><span>Operador:</span> Luis</p>
+              <p><span>Objetivo:</span> elegir una salida al teatro</p>
+              <p><span>Estado:</span> decisión pendiente</p>
+            </div>
+            <div class="message">
+              <p>Dos opciones fueron preseleccionadas.</p>
+              <p>La decisión final queda en manos del agente principal.</p>
+            </div>
+            <button class="primary-action" type="button" data-start>
+              <span>Ingresar a la misión</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </button>
           </div>
 
-          <div class="intro-grid">
-            <div class="hero-copy">
-              <p class="mono version">Versión 2.4.1</p>
-              <h1 id="intro-title">
-                <span>SISTEMA</span>
-                <span>OFICIAL DE</span>
-                <span>SELECCIÓN</span>
-                <span>DE REGALOS</span>
-              </h1>
-              <div class="status-panel" aria-label="Estado del sistema">
-                <p><span>Estado:</span> Operativo</p>
-                <p><span>Usuario detectado:</span> Luis</p>
-              </div>
-              <div class="message">
-                <p>Este año tuve un problema.</p>
-                <p>Había dos ideas que me parecían excelentes y no logré decidir.</p>
-                <p>Por lo tanto, la decisión queda en manos del principal interesado.</p>
-              </div>
-              <button class="primary-action" type="button" data-start>
-                <span>Iniciar proceso de selección</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6"></path>
-                </svg>
-              </button>
+          <div class="terminal-object" aria-hidden="true">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-
-            <div class="classified-object" aria-hidden="true">
-              <div class="seal">FD</div>
-              <div class="document-stack">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <p>Decisión pendiente</p>
+            <div class="terminal-lines">
+              <p>&gt; leyendo archivo...</p>
+              <p>&gt; verificando identidad: LUIS</p>
+              <p>&gt; preparando regalo...</p>
+              <p class="blink">&gt; esperando elección</p>
             </div>
           </div>
         </div>
@@ -68,59 +69,49 @@
       <section class="screen selection-screen" id="selection-screen" aria-labelledby="selection-title">
         <div class="shell">
           <div class="section-header">
-            <p class="mono">Protocolo de selección</p>
-            <h2 id="selection-title">Elegir una opción. Con solemnidad moderada.</h2>
+            <p class="mono">Selección de destino</p>
+            <h2 id="selection-title">Elegí una obra para completar la misión.</h2>
           </div>
 
           <div class="gift-grid" aria-live="polite">
             <article class="gift-card" data-gift="berlin" tabindex="0" aria-labelledby="berlin-title">
-              <div class="card-light" aria-hidden="true"></div>
-              <div class="ticket-visual berlin-visual" aria-hidden="true">
-                <span>BERLIN</span>
-                <strong>BERLIN</strong>
-                <small>Teatro Apolo</small>
-              </div>
+              <img class="show-image" src="assets/shows/berlin-berlin.jpg" alt="Imagen de Berlin Berlin en Plateanet">
               <div class="card-copy">
-                <p class="mono option-code">Opción A</p>
+                <p class="mono option-code">Opción A / Teatro Apolo</p>
                 <h3 id="berlin-title">Berlin Berlin</h3>
-                <p class="summary">Una comedia francesa de ritmo vertiginoso en el Berlín Oriental de la Guerra Fría, con planes de escape, enredos y bastante caos administrativo.</p>
+                <p class="summary">Emma y Ludwig quieren escapar del Berlín Oriental usando un pasadizo secreto, pero el dueño del departamento es agente de la Stasi y complica todo.</p>
                 <dl>
                   <div>
-                    <dt>Genero</dt>
-                    <dd>Comedia francesa, humor fisico</dd>
+                    <dt>Género</dt>
+                    <dd>Comedia francesa de enredos y humor físico.</dd>
                   </div>
                   <div>
-                    <dt>Dato clasificado</dt>
-                    <dd>Ganadora del Premio Molière, así que el expediente viene con sello internacional.</dd>
+                    <dt>Fuente</dt>
+                    <dd>Sinopsis basada en Teatro Apolo y Plateanet.</dd>
                   </div>
                 </dl>
-                <a href="https://www.plateanet.com/obra/34072?obra=BERLIN-BERLIN&paso=inicio" target="_blank" rel="noreferrer">Ver referencia</a>
+                <a href="https://www.plateanet.com/obra/34072?obra=BERLIN-BERLIN&paso=inicio" target="_blank" rel="noreferrer">Ver en Plateanet</a>
               </div>
               <button class="choose-button" type="button">Seleccionar Berlin Berlin</button>
             </article>
 
             <article class="gift-card" data-gift="cena" tabindex="0" aria-labelledby="cena-title">
-              <div class="card-light" aria-hidden="true"></div>
-              <div class="ticket-visual cena-visual" aria-hidden="true">
-                <span>LA CENA</span>
-                <strong>DE LOS TONTOS</strong>
-                <small>Teatro Astral</small>
-              </div>
+              <img class="show-image" src="assets/shows/la-cena-de-los-tontos.jpg" alt="Imagen de La Cena de los Tontos en Plateanet">
               <div class="card-copy">
-                <p class="mono option-code">Opción B</p>
+                <p class="mono option-code">Opción B / Teatro Astral</p>
                 <h3 id="cena-title">La Cena de los Tontos</h3>
-                <p class="summary">Una cena organizada para burlarse de un invitado termina saliendo bastante peor para los supuestos vivos. Comedia clásica, ego en riesgo.</p>
+                <p class="summary">Un grupo organiza cenas para burlarse de invitados que consideran tontos, hasta que Francisco Pignon desarma los planes y expone quién queda peor parado.</p>
                 <dl>
                   <div>
-                    <dt>Genero</dt>
-                    <dd>Comedia teatral clasica</dd>
+                    <dt>Género</dt>
+                    <dd>Comedia teatral clásica con humor ácido.</dd>
                   </div>
                   <div>
-                    <dt>Dato clasificado</dt>
-                    <dd>La version argentina supero los 200.000 espectadores en gira nacional.</dd>
+                    <dt>Fuente</dt>
+                    <dd>Sinopsis basada en MG Difusión y Plateanet.</dd>
                   </div>
                 </dl>
-                <a href="https://www.plateanet.com/obra/33879?obra=LA-CENA-DE-LOS-TONTOS-_&paso=inicio" target="_blank" rel="noreferrer">Ver referencia</a>
+                <a href="https://www.plateanet.com/obra/33879?obra=LA-CENA-DE-LOS-TONTOS-_&paso=inicio" target="_blank" rel="noreferrer">Ver en Plateanet</a>
               </div>
               <button class="choose-button" type="button">Seleccionar La Cena de los Tontos</button>
             </article>
@@ -130,30 +121,54 @@
 
       <section class="screen analysis-screen" id="analysis-screen" aria-labelledby="analysis-title" aria-live="polite">
         <div class="analysis-box">
-          <p class="mono">Módulo de criterio paternal</p>
-          <h2 id="analysis-title">Analizando decisión...</h2>
+          <p class="mono">Procesando decisión</p>
+          <h2 id="analysis-title">Registrando misión...</h2>
           <div class="progress-track" aria-label="Progreso del análisis">
             <span id="progress-bar"></span>
           </div>
           <ol class="analysis-steps" id="analysis-steps">
-            <li>Evaluando compatibilidad...</li>
-            <li>Consultando protocolo internacional...</li>
-            <li>Validando criterios de calidad...</li>
-            <li>Confirmando excelente gusto...</li>
+            <li>Validando selección...</li>
+            <li>Confirmando buen gusto...</li>
+            <li>Archivando regalo...</li>
+            <li>Desbloqueando mensaje final...</li>
           </ol>
         </div>
       </section>
 
       <section class="screen final-screen" id="final-screen" aria-labelledby="final-title">
         <div class="final-box">
-          <p class="mono">Registro completado</p>
-          <h2 id="final-title">DECISIÓN REGISTRADA</h2>
+          <p class="mono">Misión completada</p>
           <p class="final-choice" id="final-choice"></p>
-          <p>Excelente elección, Luis.</p>
-          <p>El departamento de regalos ha recibido la información necesaria para continuar con la siguiente etapa del operativo.</p>
-          <p class="heart" aria-label="corazones">❤ ❤ ❤</p>
-          <p class="fathers-day">Feliz día Luis, te amamos!</p>
-          <button class="secondary-action" type="button" data-reset>Revisar expediente</button>
+          <h2 id="final-title">Feliz día pa, te amamos!</h2>
+          <div class="heart-row" aria-hidden="true">
+            <span>❤</span>
+            <span>❤</span>
+            <span>❤</span>
+          </div>
+          <div class="memory-grid" aria-label="Fotos familiares">
+            <figure class="memory-card">
+              <img src="assets/photos/pa-1.jpg" alt="Abrazo con Luis">
+            </figure>
+            <figure class="memory-card">
+              <img src="assets/photos/pa-2.jpg" alt="Foto familiar con Luis">
+            </figure>
+            <figure class="memory-card">
+              <img src="assets/photos/pa-3.jpg" alt="Salida con Luis">
+            </figure>
+            <figure class="memory-card is-empty">
+              <span>Foto con mi hermana</span>
+            </figure>
+            <figure class="memory-card is-empty">
+              <span>Foto con mi hermana</span>
+            </figure>
+            <figure class="memory-card is-empty">
+              <span>Foto con mi hermana</span>
+            </figure>
+            <figure class="memory-card is-empty family-slot">
+              <span>Toda la familia</span>
+            </figure>
+          </div>
+          <button class="secondary-action" type="button" data-reset>Volver a revisar</button>
         </div>
       </section>
     </main>

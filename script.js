@@ -51,7 +51,7 @@ function runAnalysis(choice) {
   });
 
   analysisTimer = window.setTimeout(() => {
-    finalChoice.textContent = `Selección registrada para Luis: ${gifts[choice]}`;
+    finalChoice.textContent = `Misión seleccionada: ${gifts[choice]}`;
     showScreen("final");
   }, duration + 250);
 }
